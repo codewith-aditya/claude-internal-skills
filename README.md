@@ -11,6 +11,14 @@
 > [!WARNING]
 > **10 of the 46 skills are proprietary, not open source.** `docx`, `pdf`, `pdf-reading`, `pptx`, `xlsx`, `file-reading`, `artifact-emulator`, `built-in-browser`, `chrome-browser`, `computer-use` carry `© Anthropic, PBC — All rights reserved` and are governed by your agreement with Anthropic. Read [⚠️ Proprietary skills](#%EF%B8%8F-proprietary-skills) before redistributing.
 
+> [!NOTE]
+> **Quick start (Claude Code):**
+> ```bash
+> claude plugin marketplace add codewith-aditya/claude-internal-skills
+> claude plugin install claude-internal-skills@claude-skills-archive
+> ```
+> Full setup — clone, `--plugin-dir`, manual copy, Hermes — is in [Setup](#setup).
+
 ---
 
 ## Screenshots
@@ -176,17 +184,80 @@ These assume the agent can browse, dial, or pay on the user's behalf.
 
 ---
 
-## How to use
+## Setup
 
-**Claude Code / any skill-aware agent** — drop a folder into your skills directory:
+### 1. Clone
 
 ```bash
-cp -r claude-tools/PUBLIC-REPO-TOOLS/claude-api ~/.claude/skills/claude-api
+git clone https://github.com/codewith-aditya/claude-internal-skills.git
+cd claude-internal-skills
 ```
 
-**Cowork / cloud session** — the originals live at `/mnt/skills/public/` and `/mnt/skills/examples/`.
+### 2. Install as a Claude Code plugin (recommended)
 
-**Hermes Agent** — `skill_manage(action='create')` with the `SKILL.md` body, or copy into `~/.hermes/skills/`.
+The repo ships `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, so Claude Code can load all three skill directories in one step:
+
+```bash
+# register this repo as a marketplace
+claude plugin marketplace add codewith-aditya/claude-internal-skills
+
+# install the plugin
+claude plugin install claude-internal-skills@claude-skills-archive
+```
+
+Same thing from inside a session:
+
+```
+/plugin marketplace add codewith-aditya/claude-internal-skills
+/plugin install claude-internal-skills@claude-skills-archive
+```
+
+Verify it loaded (skills are namespaced under the plugin name):
+
+```bash
+claude plugin list
+claude plugin details claude-internal-skills
+```
+
+### 3. Or load the directory directly, no marketplace
+
+```bash
+claude --plugin-dir ./claude-internal-skills
+```
+
+### 4. Or copy skills by hand
+
+```bash
+# Apache-2.0 skills only
+mkdir -p ~/.claude/skills
+cp -r claude-tools/PUBLIC-REPO-TOOLS/* ~/.claude/skills/
+
+# a single skill you actually need
+cp -r claude-tools/ADVANCED-TOOLS/theme-factory ~/.claude/skills/
+```
+
+Any skill-aware agent that reads a `skills/` directory works the same way — the unit is just a folder with `SKILL.md` in it.
+
+### 5. Hermes Agent
+
+```bash
+cp -r claude-tools/PUBLIC-REPO-TOOLS/claude-api ~/.hermes/skills/claude-api
+```
+
+Or `skill_manage(action='create')` with the `SKILL.md` body.
+
+### 6. Cowork / cloud session
+
+The originals live at `/mnt/skills/public/` and `/mnt/skills/examples/`.
+
+### 7. Rebuild a `.skill` bundle
+
+`.skill` files are just the folder zipped:
+
+```bash
+mkdir -p claude-tools/bundles
+cd claude-tools/ADVANCED-TOOLS && zip -r ../../claude-tools/bundles/theme-factory.skill theme-factory/
+```
 
 **Portability notes**
 

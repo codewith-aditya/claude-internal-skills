@@ -1,0 +1,14 @@
+{
+  "name": "claude-skills-archive",
+  "owner": {
+    "name": "Aditya Wakharkar",
+    "url": "https://github.com/codewith-aditya"
+  },
+  "plugins": [
+    {
+      "name": "claude-internal-skills",
+      "source": "./",
+      "description": "46 agent skills that ship inside Claude: public core skills, app-only example skills (browser, computer use, research, errands), and the remaining skills from anthropics/skills."
+    }
+  ]
+}
