@@ -1,6 +1,6 @@
 {
-  "name": "claude-internal-skills",
-  "displayName": "Claude Internal Skills",
+  "name": "agent-skills",
+  "displayName": "Claude Agent Skills Archive",
   "version": "1.0.0",
   "description": "Archive of 46 agent skills that ship inside Claude — public core skills, app-only example skills, and the remaining skills from anthropics/skills. Mixed licensing: see README before reuse.",
   "author": {
@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/codewith-aditya/claude-internal-skills",
   "repository": "https://github.com/codewith-aditya/claude-internal-skills",
+  "license": "Apache-2.0",
   "keywords": [
     "claude",
     "agent-skills",
@@ -16,6 +17,7 @@
     "anthropic",
     "archive"
   ],
+  "icon": "./.claude-plugin/icon.png",
   "skills": [
     "./claude-tools/PUBLIC-REPO-TOOLS/",
     "./claude-tools/ADVANCED-TOOLS/",

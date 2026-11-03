@@ -15,7 +15,7 @@
 > **Quick start (Claude Code):**
 > ```bash
 > claude plugin marketplace add codewith-aditya/claude-internal-skills
-> claude plugin install claude-internal-skills@claude-skills-archive
+> claude plugin install agent-skills@skills-archive
 > ```
 > Full setup — clone, `--plugin-dir`, manual copy, Hermes — is in [Setup](#setup).
 
@@ -202,21 +202,21 @@ The repo ships `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json
 claude plugin marketplace add codewith-aditya/claude-internal-skills
 
 # install the plugin
-claude plugin install claude-internal-skills@claude-skills-archive
+claude plugin install agent-skills@skills-archive
 ```
 
 Same thing from inside a session:
 
 ```
 /plugin marketplace add codewith-aditya/claude-internal-skills
-/plugin install claude-internal-skills@claude-skills-archive
+/plugin install agent-skills@skills-archive
 ```
 
 Verify it loaded (skills are namespaced under the plugin name):
 
 ```bash
 claude plugin list
-claude plugin details claude-internal-skills
+claude plugin details agent-skills
 ```
 
 ### 3. Or load the directory directly, no marketplace

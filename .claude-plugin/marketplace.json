@@ -1,12 +1,13 @@
 {
-  "name": "claude-skills-archive",
+  "name": "skills-archive",
+  "description": "Archive of 46 agent skills that ship inside Claude — public core skills, app-only example skills, and the remaining skills from anthropics/skills. Mixed licensing, marked per skill.",
   "owner": {
     "name": "Aditya Wakharkar",
     "url": "https://github.com/codewith-aditya"
   },
   "plugins": [
     {
-      "name": "claude-internal-skills",
+      "name": "agent-skills",
       "source": "./",
       "description": "46 agent skills that ship inside Claude: public core skills, app-only example skills (browser, computer use, research, errands), and the remaining skills from anthropics/skills."
     }

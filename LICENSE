@@ -1,0 +1,36 @@
+Copyright (c) 2026 Aditya Wakharkar
+(repository packaging, README, plugin manifests, icon)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+------------------------------------------------------------------------
+THIRD-PARTY CONTENT — NOT COVERED BY THE GRANT ABOVE
+------------------------------------------------------------------------
+
+All skill content under claude-tools/ is © Anthropic, PBC. The Apache-2.0
+license above applies only to this repository's own packaging, index and
+documentation. Each skill folder keeps its original LICENSE.txt:
+
+  * 28 skills  : Apache-2.0, redistributable with attribution
+  * 10 skills  : "All rights reserved", governed by Anthropic's terms
+                 docx, pdf, pdf-reading, pptx, xlsx, file-reading,
+                 artifact-emulator, built-in-browser, chrome-browser,
+                 computer-use
+  *  8 skills  : no license file, treated as all rights reserved
+                 deep-research, doc-coauthoring, docs, google-workspace,
+                 import-memory, morning, product-self-knowledge,
+                 setup-writing-style
+
+See README.md for the per-skill breakdown. This repository grants no
+rights to Anthropic's content and is not affiliated with or endorsed by
+Anthropic.
